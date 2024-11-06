@@ -107,8 +107,8 @@ module output_peri (
       rd_data[ 6: 0] = io_hex4;
     end
 	*/
-	 8'h20: rd_data = {1'b0, io_hex3, 1'b0, io_hex2, 1'b0, io_hex1, 1'b0, io_hex0};
-	 8'h24: rd_data = {1'b0, io_hex7, 1'b0, io_hex6, 1'b0, io_hex5, 1'b0, io_hex4};
+	  8'h20: rd_data = {1'b0, io_hex3, 1'b0, io_hex2, 1'b0, io_hex1, 1'b0, io_hex0};
+	  8'h24: rd_data = {1'b0, io_hex7, 1'b0, io_hex6, 1'b0, io_hex5, 1'b0, io_hex4};
     8'h30: rd_data = io_lcd;
     default: rd_data = 0;
   	endcase 

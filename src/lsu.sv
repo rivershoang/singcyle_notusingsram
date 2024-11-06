@@ -31,14 +31,14 @@ module lsu (
   assign wr_en_dmem = wr_en && ~addr[14];
   assign wr_en_outperi = wr_en && addr[14] && (addr[11:8] == 4'b0000);
 
-  data_memory (
+  data_memory dmem (
     .addr    (addr[10:0]),
     .bmask   (bmask)     , 
     .wr_en   (wr_en_dmem),
     .w_data  (w_data)    ,
     .r_data  (rdata_dmem),
     .clk     (clk)
-  )
+  );
 
   output_peri peri_out (
     .clk       (clk)          ,
@@ -48,7 +48,7 @@ module lsu (
     .wr_en     (wr_en_outperi),
     .bmask     (bmask)        ,
     .rd_data   (rd_peri)	    ,	
-    .io_ledr   (io_ledr)	  ,
+    .io_ledr   (io_ledr)	    ,
     .io_ledg   (io_ledg)      ,
     .io_hex0   (io_hex0) 	    ,
     .io_hex1   (io_hex1)      ,
