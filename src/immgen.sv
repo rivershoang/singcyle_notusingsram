@@ -8,10 +8,12 @@ import opcode_type::*;
   output logic [31:0] imm
 ); 
   
-  opcode_type_e opcode = opcode_type_e'(instr[6:0]);
-  funct3_e funct3 = funct3_e'(instr[14:12]);
-
+  opcode_type_e opcode;
+  funct3_e funct3;
+  
   always_comb begin 
+  	opcode = opcode_type_e'(instr[6:0]);
+    funct3 = funct3_e'(instr[14:12]);
     case (opcode) 
       LUI   : imm = {instr[31:12], 12'h0};
       AUIPC : imm = {instr[31:12], 12'h0};

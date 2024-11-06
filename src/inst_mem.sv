@@ -9,7 +9,7 @@ module inst_mem(
   logic [3:0][7:0] imem [2**11-1:0];
 
   initial begin
-    $readmemh("./../02_test/dump/mem.dump", imem);
+    $readmemh("E:/Lecture/ComputerArchitecture/single_cycle_team/02_test/dump/mem.dump", imem);
   end
 
   assign rdata = imem[raddr[12:2]];

@@ -6,7 +6,7 @@ import alu_opcode::*;
 (
   input  logic [31:0] operand_a		 ,
   input  logic [31:0] operand_b		 ,	
-  input 			  alu_op_e alu_op,
+  input 			[ 3:0] alu_op,
   output logic [31:0] alu_data
 );
 /* verilator lint_off UNUSEDSIGNAL */
@@ -16,6 +16,8 @@ import alu_opcode::*;
                srl_data,
                sra_data;
 /* verilator lint_on UNUSEDSIGNAL */
+  
+  alu_op_e alu_op_t;
   
   sub_compare compare (
     .a       (operand_a),
@@ -33,7 +35,9 @@ import alu_opcode::*;
   );
 
   always_comb begin 
-    case (alu_op) 
+	 alu_op_t = alu_op_e'(alu_op[3:0]);
+ 
+    case (alu_op_t) 
       ADD : alu_data = operand_a + operand_b; 
       SUB : alu_data = data_s[31:0];
       SLT : alu_data = (data_s[32]) ? 32'h1 : 32'h0;
