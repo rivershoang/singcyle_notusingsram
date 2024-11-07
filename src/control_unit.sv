@@ -1,5 +1,6 @@
 `include "timescale.svh"
 `include "opcode_type.svh"
+`timescale 1ns/1ps
 
 module control_unit 
 import opcode_type::*;
@@ -25,21 +26,13 @@ import opcode_type::*;
   
   logic [18:0] other_signal;
 
-  assign {pc_sel, 
-          a_sel,
-          b_sel,
-          reg_wr_en,
-          br_un,
-          wr_en,
-          alu_sel,
-          bmask,
-          ld_sel,
-          wb_sel} = other_signal;
+  assign {pc_sel, a_sel, b_sel, reg_wr_en, br_un, wr_en, alu_sel, bmask, ld_sel, wb_sel} = other_signal;
 
   always_comb begin 
-	 opcode_type = opcode_type_e'(instr[6:0]);
+	  opcode_type = opcode_type_e'(instr[6:0]);
     funct3_type = funct3_e'(instr[14:12]);
-	 
+	  insn_vld = 1'b1;
+
     case (opcode_type) 
     LUI   : other_signal = 19'b0_1_1_1_1_0_1011_1111_111_00; // lui
     AUIPC : other_signal = 19'b0_1_1_1_1_0_0000_1111_111_00; // auipc
@@ -47,11 +40,11 @@ import opcode_type::*;
     JALR  : other_signal = 19'b1_0_1_1_1_0_0000_1111_111_10; // jalr
     B_type: begin 
       case (funct3_type) 
-      BEQ_LB_SB_ADDI   : other_signal = br_equal ?  19'b1_1_1_0_1_0_0000_1111_111_00 : 19'b0_1_1_0_1_0_0000_1111_111_00;               // beq
-      BNE_LH_SH_SLLI   : other_signal = ~br_equal ? 19'b1_1_1_0_1_0_0000_1111_111_00 : 19'b0_1_1_0_1_0_0000_1111_111_00;               // bne
-      BLT_LBU_XORI     : other_signal = br_less ?   19'b1_1_1_0_1_0_0000_1111_111_00 : 19'b0_1_1_0_1_0_0000_1111_111_00;               // blt
+      BEQ_LB_SB_ADDI   : other_signal = (br_equal) ?  19'b1_1_1_0_1_0_0000_1111_111_00 : 19'b0_1_1_0_1_0_0000_1111_111_00;               // beq
+      BNE_LH_SH_SLLI   : other_signal = (~br_equal) ? 19'b1_1_1_0_1_0_0000_1111_111_00 : 19'b0_1_1_0_1_0_0000_1111_111_00;               // bne
+      BLT_LBU_XORI     : other_signal = (br_less) ?   19'b1_1_1_0_1_0_0000_1111_111_00 : 19'b0_1_1_0_1_0_0000_1111_111_00;               // blt
       BGE_LHU_SRLI_SRAI: other_signal = (~br_less || br_equal) ?  19'b1_1_1_0_1_0_0000_1111_111_00 : 19'b0_1_1_0_1_0_0000_1111_111_00; // bge
-      BLTU_ORI         : other_signal = br_less ?   19'b1_1_1_0_0_0_0000_1111_111_00 : 19'b0_1_1_0_0_0_0000_1111_111_00;               // bltu
+      BLTU_ORI         : other_signal = (br_less) ?   19'b1_1_1_0_0_0_0000_1111_111_00 : 19'b0_1_1_0_0_0_0000_1111_111_00;               // bltu
       BGEU_ANDI        : other_signal = (~br_less || br_equal) ?  19'b1_1_1_0_0_0_0000_1111_111_00 : 19'b0_1_1_0_0_0_0000_1111_111_00; // bgeu
       default          : other_signal = 19'd0;
       endcase

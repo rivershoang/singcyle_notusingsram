@@ -1,4 +1,5 @@
-`include "timescale.svh" 
+//`include "timescale.svh" 
+`timescale 1ns/1ps
 
 module brc_tb ();
   logic clk;

@@ -1,11 +1,12 @@
 `include "alu_opcode.svh"
 `include "opcode_type.svh"
 
+`timescale 1ns/1ps
 module singlecycle 
 (
    input  logic        clk     , 
    input  logic        rst     ,
-   output logic        pc_debug,
+   output logic [31:0] pc_debug,
    output logic        insn_vld,
    output logic [31:0] io_ledr ,
    output logic [31:0] io_ledg , 
@@ -19,15 +20,21 @@ module singlecycle
    output logic [ 6:0] io_hex7 ,
    output logic [31:0] io_lcd  ,
    input  logic [31:0] io_sw   ,
-   input  logic [ 3:0] io_btn  
+   input  logic [ 3:0] io_btn  ,
+
+   // for testbench
+   output logic [31:0] instr_test
 ); 
 
    logic [ 1:0] wb_sel;
-   logic [12:0] pc;
-   logic [31:0] instr, wb_data, rs1_data, rs2_data, imm, alu_data, r_data;
+   logic [31:0] pc, pc_four, nxt_pc;
+   logic [31:0] instr, wb_data, rs1_data, rs2_data, imm, alu_data, r_data, operand_a, operand_b;
    logic        reg_wr_en, br_un, br_less, br_equal, a_sel, b_sel, wr_en, pc_sel;
    logic [ 3:0] alu_sel, bmask;
    logic [ 2:0] ld_sel;
+
+   // for testbench
+   assign instr_test = instr;
 
    control_unit ctr_unit (
       .instr     (instr)    ,
@@ -43,13 +50,13 @@ module singlecycle
       .ld_sel    (ld_sel)   ,
       .bmask     (bmask)    ,
       .wb_sel    (wb_sel)   ,
-      .insn_vld  ()
+      .insn_vld  (insn_vld)
    ); 
 	// program counter 
 	assign pc_four = pc + 4;
 	
    // pc select 
-   assign nxt_pc = (~pc_sel) ? pc_four : alu_data;
+   assign nxt_pc = (pc_sel) ? alu_data : pc_four;
 
    pc pr_cnt (
       .clk    (clk)   ,
@@ -66,9 +73,9 @@ module singlecycle
    regfile reg_files (
       .clk      (clk)         ,   
       .rst      (rst)         ,
-      .rs1_addr (instr[19:15]) ,
+      .rs1_addr (instr[19:15]),
       .rs2_addr (instr[24:20]),
-      .rd_addr  (instr[11:7]),
+      .rd_addr  (instr[11:7]) ,
       .rd_wren  (reg_wr_en)   ,
       .rd_data  (wb_data)     ,
       .rs1_data (rs1_data)    ,
@@ -89,10 +96,10 @@ module singlecycle
    );
 
    // select operand a
-   assign operand_a = (~a_sel) ? rs1_data : pc; 
+   assign operand_a = (a_sel) ? pc : rs1_data; 
 
    // select operand b
-   assign operand_b = (~b_sel) ? rs1_data : imm;
+   assign operand_b = (b_sel) ? imm : rs2_data;
 
    alu alu_process (
       .operand_a (operand_a),

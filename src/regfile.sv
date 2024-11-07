@@ -12,7 +12,7 @@ module regfile (
   output logic [31:0] rs2_data
 );
 
-  logic [31:0] register_array [31:0];
+  logic [31:0] register_array [1:31];
 
   integer i; 
 

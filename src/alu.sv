@@ -6,7 +6,7 @@ import alu_opcode::*;
 (
   input  logic [31:0] operand_a		 ,
   input  logic [31:0] operand_b		 ,	
-  input 			[ 3:0] alu_op,
+  input 			 [ 3:0] alu_op       ,
   output logic [31:0] alu_data
 );
 /* verilator lint_off UNUSEDSIGNAL */
