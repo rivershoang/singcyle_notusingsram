@@ -11,7 +11,7 @@ module inst_mem #(
   logic [3:0][7:0] imem [2**(IMEM_W-2)-1:0];
 
   initial begin
-    $readmemh("E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/test/dump/factorial/factorial.txt", imem);
+    $readmemh("E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/test/dump/sw_to_seg/hex2dec_nam.txt", imem);
   end
   
   always_comb begin : proc_data

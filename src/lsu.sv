@@ -47,8 +47,8 @@ module lsu (
     .w_data    (w_data)       ,
     .wr_en     (wr_en_outperi),
     .bmask     (bmask)        ,
-    .rd_data   (rd_peri)	    ,	
-    .io_ledr   (io_ledr)	    ,
+    .rd_data   (rd_peri)	    ,
+    .io_ledr   (io_ledr)      ,
     .io_ledg   (io_ledg)      ,
     .io_hex0   (io_hex0) 	    ,
     .io_hex1   (io_hex1)      ,
@@ -62,7 +62,6 @@ module lsu (
   );
 
   input_peri per_in (
-    .rst    (rst)      ,
     .addr   (addr[7:0]),
     .io_sw  (io_sw)    ,
     .io_btn (io_btn)   ,

@@ -18,7 +18,7 @@ module regfile (
 
   always_ff @(posedge clk) begin 
     if (rst) begin 
-      for (i = 0; i < 32; i = i + 1) begin
+      for (i = 1; i < 32; i = i + 1) begin
         register_array[i] <= 32'h0;
       end
     end else if (rd_wren && (rd_addr != 5'b00000)) begin 

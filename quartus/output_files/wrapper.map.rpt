@@ -1,5 +1,5 @@
 Analysis & Synthesis report for wrapper
-Thu Nov 07 09:50:49 2024
+Sat Nov 09 02:13:48 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,13 +13,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: inst_mem:imem
  11. Parameter Settings for User Entity Instance: lsu:load_store_unit|data_memory:dmem
  12. Port Connectivity Checks: "alu:alu_process|sub_compare:compare"
  13. Port Connectivity Checks: "brc:branchcomp|sub_compare:br_comp"
- 14. Port Connectivity Checks: "control_unit:ctr_unit"
+ 14. Port Connectivity Checks: "inst_mem:imem"
  15. Elapsed Time Per Partition
  16. Analysis & Synthesis Messages
 
@@ -47,16 +47,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 07 09:50:48 2024           ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 09 02:13:48 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; wrapper                                         ;
 ; Top-level Entity Name              ; singlecycle                                     ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 31,879                                          ;
-;     Total combinational functions  ; 14,639                                          ;
-;     Dedicated logic registers      ; 17,349                                          ;
-; Total registers                    ; 17349                                           ;
-; Total pins                         ; 192                                             ;
+; Total logic elements               ; 33,185                                          ;
+;     Total combinational functions  ; 15,753                                          ;
+;     Dedicated logic registers      ; 17,560                                          ;
+; Total registers                    ; 17560                                           ;
+; Total pins                         ; 255                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -160,30 +160,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                               ;
-+---------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                          ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
-+---------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; ../src/sub_compare.sv                                                     ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/sub_compare.sv  ;         ;
-; ../src/singlecycle.sv                                                     ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/singlecycle.sv  ;         ;
-; ../src/shift_reg.sv                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/shift_reg.sv    ;         ;
-; ../src/regfile.sv                                                         ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/regfile.sv      ;         ;
-; ../src/pc.sv                                                              ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/pc.sv           ;         ;
-; ../src/output_peri.sv                                                     ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/output_peri.sv  ;         ;
-; ../src/lsu.sv                                                             ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/lsu.sv          ;         ;
-; ../src/inst_mem.sv                                                        ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/inst_mem.sv     ;         ;
-; ../src/input_peri.sv                                                      ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/input_peri.sv   ;         ;
-; ../src/immgen.sv                                                          ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/immgen.sv       ;         ;
-; ../src/data_memory.sv                                                     ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/data_memory.sv  ;         ;
-; ../src/control_unit.sv                                                    ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/control_unit.sv ;         ;
-; ../src/brc.sv                                                             ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/brc.sv          ;         ;
-; ../src/alu.sv                                                             ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/alu.sv          ;         ;
-; ../src/alu_opcode.svh                                                     ; yes             ; Auto-Found Unspecified File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/alu_opcode.svh  ;         ;
-; ../src/opcode_type.svh                                                    ; yes             ; Auto-Found Unspecified File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/opcode_type.svh ;         ;
-; /lecture/computerarchitecture/singlecycle_notussingsram/src/timescale.svh ; yes             ; Auto-Found Unspecified File  ; /lecture/computerarchitecture/singlecycle_notussingsram/src/timescale.svh     ;         ;
-; /lecture/computerarchitecture/single_cycle_team/02_test/dump/gcd.dump     ; yes             ; Auto-Found Unspecified File  ; /lecture/computerarchitecture/single_cycle_team/02_test/dump/gcd.dump         ;         ;
-+---------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                               ;
++---------------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                                            ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                ; Library ;
++---------------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
+; ../src/sub_compare.sv                                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/sub_compare.sv                ;         ;
+; ../src/singlecycle.sv                                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/singlecycle.sv                ;         ;
+; ../src/shift_reg.sv                                                                         ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/shift_reg.sv                  ;         ;
+; ../src/regfile.sv                                                                           ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/regfile.sv                    ;         ;
+; ../src/pc.sv                                                                                ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/pc.sv                         ;         ;
+; ../src/output_peri.sv                                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/output_peri.sv                ;         ;
+; ../src/lsu.sv                                                                               ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/lsu.sv                        ;         ;
+; ../src/inst_mem.sv                                                                          ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/inst_mem.sv                   ;         ;
+; ../src/input_peri.sv                                                                        ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/input_peri.sv                 ;         ;
+; ../src/immgen.sv                                                                            ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/immgen.sv                     ;         ;
+; ../src/data_memory.sv                                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/data_memory.sv                ;         ;
+; ../src/control_unit.sv                                                                      ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/control_unit.sv               ;         ;
+; ../src/brc.sv                                                                               ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/brc.sv                        ;         ;
+; ../src/alu.sv                                                                               ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/alu.sv                        ;         ;
+; ../src/alu_opcode.svh                                                                       ; yes             ; Auto-Found Unspecified File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/alu_opcode.svh                ;         ;
+; ../src/opcode_type.svh                                                                      ; yes             ; Auto-Found Unspecified File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/opcode_type.svh               ;         ;
+; /lecture/computerarchitecture/singlecycle_notussingsram/src/timescale.svh                   ; yes             ; Auto-Found Unspecified File  ; /lecture/computerarchitecture/singlecycle_notussingsram/src/timescale.svh                   ;         ;
+; /lecture/computerarchitecture/singlecycle_notussingsram/test/dump/sw_to_seg/hex2dec_nam.txt ; yes             ; Auto-Found File              ; /lecture/computerarchitecture/singlecycle_notussingsram/test/dump/sw_to_seg/hex2dec_nam.txt ;         ;
++---------------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -191,27 +191,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 31,879 ;
+; Estimated Total logic elements              ; 33,185 ;
 ;                                             ;        ;
-; Total combinational functions               ; 14639  ;
+; Total combinational functions               ; 15753  ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 13555  ;
-;     -- 3 input functions                    ; 874    ;
-;     -- <=2 input functions                  ; 210    ;
+;     -- 4 input functions                    ; 14221  ;
+;     -- 3 input functions                    ; 1274   ;
+;     -- <=2 input functions                  ; 258    ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 14377  ;
-;     -- arithmetic mode                      ; 262    ;
+;     -- normal mode                          ; 15472  ;
+;     -- arithmetic mode                      ; 281    ;
 ;                                             ;        ;
-; Total registers                             ; 17349  ;
-;     -- Dedicated logic registers            ; 17349  ;
+; Total registers                             ; 17560  ;
+;     -- Dedicated logic registers            ; 17560  ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
-; I/O pins                                    ; 192    ;
+; I/O pins                                    ; 255    ;
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ; Maximum fan-out node                        ; clk    ;
-; Maximum fan-out                             ; 17349  ;
-; Total fan-out                               ; 109454 ;
+; Maximum fan-out                             ; 17560  ;
+; Total fan-out                               ; 114110 ;
 ; Average fan-out                             ; 3.40   ;
 +---------------------------------------------+--------+
 
@@ -221,256 +221,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers  ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
 +------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; |singlecycle                 ; 14639 (258)       ; 17349 (0)     ; 0           ; 0            ; 0       ; 0         ; 192  ; 0            ; |singlecycle                                          ; work         ;
-;    |alu:alu_process|         ; 523 (244)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|alu:alu_process                          ; work         ;
-;       |shift_reg:shift|      ; 181 (181)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|alu:alu_process|shift_reg:shift          ; work         ;
+; |singlecycle                 ; 15753 (361)       ; 17560 (0)     ; 0           ; 0            ; 0       ; 0         ; 255  ; 0            ; |singlecycle                                          ; work         ;
+;    |alu:alu_process|         ; 655 (358)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|alu:alu_process                          ; work         ;
+;       |shift_reg:shift|      ; 199 (199)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|alu:alu_process|shift_reg:shift          ; work         ;
 ;       |sub_compare:compare|  ; 98 (98)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|alu:alu_process|sub_compare:compare      ; work         ;
 ;    |brc:branchcomp|          ; 152 (21)          ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|brc:branchcomp                           ; work         ;
 ;       |sub_compare:br_comp|  ; 131 (131)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|brc:branchcomp|sub_compare:br_comp       ; work         ;
-;    |control_unit:ctr_unit|   ; 45 (45)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|control_unit:ctr_unit                    ; work         ;
+;    |control_unit:ctr_unit|   ; 39 (39)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|control_unit:ctr_unit                    ; work         ;
 ;    |immgen:immidiate|        ; 6 (6)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|immgen:immidiate                         ; work         ;
-;    |inst_mem:imem|           ; 49 (49)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|inst_mem:imem                            ; work         ;
-;    |lsu:load_store_unit|     ; 12592 (50)        ; 16536 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit                      ; work         ;
-;       |data_memory:dmem|     ; 12473 (12473)     ; 16384 (16384) ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit|data_memory:dmem     ; work         ;
+;    |inst_mem:imem|           ; 457 (457)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|inst_mem:imem                            ; work         ;
+;    |lsu:load_store_unit|     ; 12557 (18)        ; 16536 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit                      ; work         ;
+;       |data_memory:dmem|     ; 12481 (12481)     ; 16384 (16384) ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit|data_memory:dmem     ; work         ;
 ;       |input_peri:per_in|    ; 4 (4)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit|input_peri:per_in    ; work         ;
-;       |output_peri:peri_out| ; 65 (65)           ; 152 (152)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit|output_peri:peri_out ; work         ;
-;    |pc:pr_cnt|               ; 14 (14)           ; 13 (13)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|pc:pr_cnt                                ; work         ;
-;    |regfile:reg_files|       ; 1000 (1000)       ; 800 (800)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|regfile:reg_files                        ; work         ;
+;       |output_peri:peri_out| ; 54 (54)           ; 152 (152)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit|output_peri:peri_out ; work         ;
+;    |pc:pr_cnt|               ; 33 (33)           ; 32 (32)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|pc:pr_cnt                                ; work         ;
+;    |regfile:reg_files|       ; 1493 (1493)       ; 992 (992)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|regfile:reg_files                        ; work         ;
 +------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                              ;
-+------------------------------------------+------------------------------------------------------+
-; Register name                            ; Reason for Removal                                   ;
-+------------------------------------------+------------------------------------------------------+
-; regfile:reg_files|register_array[18][31] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][31] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][31] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][31] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][30] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][30] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][30] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][30] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][29] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][29] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][29] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][29] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][28] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][28] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][28] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][28] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][27] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][27] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][27] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][27] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][26] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][26] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][26] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][26] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][25] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][25] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][25] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][25] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][24] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][24] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][24] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][24] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][23] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][23] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][23] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][23] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][22] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][22] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][22] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][22] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][21] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][21] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][21] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][21] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][20] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][20] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][20] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][20] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][19] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][19] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][19] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][19] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][18] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][18] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][18] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][18] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][17] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][17] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][17] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][17] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][16] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][16] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][16] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][16] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][15] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][15] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][15] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][15] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][14] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][14] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][14] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][14] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][13] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][13] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][13] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][13] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][12] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][12] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][12] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][12] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][11] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][11] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][11] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][11] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][10] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][10] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][10] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][10] ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][9]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][9]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][9]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][9]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][8]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][8]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][8]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][8]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][7]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][7]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][7]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][7]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][6]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][6]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][6]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][6]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][5]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][5]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][5]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][5]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][4]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][4]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][4]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][4]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][3]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][3]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][3]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][3]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][2]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][2]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][2]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][2]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][1]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][1]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][1]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][1]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[18][0]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[19][0]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[22][0]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[23][0]  ; Lost fanout                                          ;
-; regfile:reg_files|register_array[0][0]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][1]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][2]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][3]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][4]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][5]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][6]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][7]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][8]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][9]   ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][10]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][11]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][12]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][13]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][14]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][15]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][16]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][17]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][18]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][19]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][20]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][21]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][22]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][23]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][24]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][25]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][26]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][27]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][28]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][29]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][30]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[0][31]  ; Stuck at GND due to stuck port data_in               ;
-; regfile:reg_files|register_array[16][0]  ; Merged with regfile:reg_files|register_array[20][0]  ;
-; regfile:reg_files|register_array[17][0]  ; Merged with regfile:reg_files|register_array[21][0]  ;
-; regfile:reg_files|register_array[16][1]  ; Merged with regfile:reg_files|register_array[20][1]  ;
-; regfile:reg_files|register_array[17][1]  ; Merged with regfile:reg_files|register_array[21][1]  ;
-; regfile:reg_files|register_array[16][2]  ; Merged with regfile:reg_files|register_array[20][2]  ;
-; regfile:reg_files|register_array[17][2]  ; Merged with regfile:reg_files|register_array[21][2]  ;
-; regfile:reg_files|register_array[16][3]  ; Merged with regfile:reg_files|register_array[20][3]  ;
-; regfile:reg_files|register_array[17][3]  ; Merged with regfile:reg_files|register_array[21][3]  ;
-; regfile:reg_files|register_array[16][4]  ; Merged with regfile:reg_files|register_array[20][4]  ;
-; regfile:reg_files|register_array[17][4]  ; Merged with regfile:reg_files|register_array[21][4]  ;
-; regfile:reg_files|register_array[16][5]  ; Merged with regfile:reg_files|register_array[20][5]  ;
-; regfile:reg_files|register_array[17][5]  ; Merged with regfile:reg_files|register_array[21][5]  ;
-; regfile:reg_files|register_array[16][6]  ; Merged with regfile:reg_files|register_array[20][6]  ;
-; regfile:reg_files|register_array[17][6]  ; Merged with regfile:reg_files|register_array[21][6]  ;
-; regfile:reg_files|register_array[16][7]  ; Merged with regfile:reg_files|register_array[20][7]  ;
-; regfile:reg_files|register_array[17][7]  ; Merged with regfile:reg_files|register_array[21][7]  ;
-; regfile:reg_files|register_array[16][8]  ; Merged with regfile:reg_files|register_array[20][8]  ;
-; regfile:reg_files|register_array[17][8]  ; Merged with regfile:reg_files|register_array[21][8]  ;
-; regfile:reg_files|register_array[16][9]  ; Merged with regfile:reg_files|register_array[20][9]  ;
-; regfile:reg_files|register_array[17][9]  ; Merged with regfile:reg_files|register_array[21][9]  ;
-; regfile:reg_files|register_array[16][10] ; Merged with regfile:reg_files|register_array[20][10] ;
-; regfile:reg_files|register_array[17][10] ; Merged with regfile:reg_files|register_array[21][10] ;
-; regfile:reg_files|register_array[16][11] ; Merged with regfile:reg_files|register_array[20][11] ;
-; regfile:reg_files|register_array[17][11] ; Merged with regfile:reg_files|register_array[21][11] ;
-; regfile:reg_files|register_array[16][12] ; Merged with regfile:reg_files|register_array[20][12] ;
-; regfile:reg_files|register_array[17][12] ; Merged with regfile:reg_files|register_array[21][12] ;
-; regfile:reg_files|register_array[16][13] ; Merged with regfile:reg_files|register_array[20][13] ;
-; regfile:reg_files|register_array[17][13] ; Merged with regfile:reg_files|register_array[21][13] ;
-; regfile:reg_files|register_array[16][14] ; Merged with regfile:reg_files|register_array[20][14] ;
-; regfile:reg_files|register_array[17][14] ; Merged with regfile:reg_files|register_array[21][14] ;
-; regfile:reg_files|register_array[16][15] ; Merged with regfile:reg_files|register_array[20][15] ;
-; regfile:reg_files|register_array[17][15] ; Merged with regfile:reg_files|register_array[21][15] ;
-; regfile:reg_files|register_array[16][16] ; Merged with regfile:reg_files|register_array[20][16] ;
-; regfile:reg_files|register_array[17][16] ; Merged with regfile:reg_files|register_array[21][16] ;
-; regfile:reg_files|register_array[16][17] ; Merged with regfile:reg_files|register_array[20][17] ;
-; regfile:reg_files|register_array[17][17] ; Merged with regfile:reg_files|register_array[21][17] ;
-; regfile:reg_files|register_array[16][18] ; Merged with regfile:reg_files|register_array[20][18] ;
-; regfile:reg_files|register_array[17][18] ; Merged with regfile:reg_files|register_array[21][18] ;
-; regfile:reg_files|register_array[16][19] ; Merged with regfile:reg_files|register_array[20][19] ;
-; regfile:reg_files|register_array[17][19] ; Merged with regfile:reg_files|register_array[21][19] ;
-; regfile:reg_files|register_array[16][20] ; Merged with regfile:reg_files|register_array[20][20] ;
-; regfile:reg_files|register_array[17][20] ; Merged with regfile:reg_files|register_array[21][20] ;
-; regfile:reg_files|register_array[16][21] ; Merged with regfile:reg_files|register_array[20][21] ;
-; regfile:reg_files|register_array[17][21] ; Merged with regfile:reg_files|register_array[21][21] ;
-; regfile:reg_files|register_array[16][22] ; Merged with regfile:reg_files|register_array[20][22] ;
-; regfile:reg_files|register_array[17][22] ; Merged with regfile:reg_files|register_array[21][22] ;
-; regfile:reg_files|register_array[16][23] ; Merged with regfile:reg_files|register_array[20][23] ;
-; regfile:reg_files|register_array[17][23] ; Merged with regfile:reg_files|register_array[21][23] ;
-; regfile:reg_files|register_array[16][24] ; Merged with regfile:reg_files|register_array[20][24] ;
-; regfile:reg_files|register_array[17][24] ; Merged with regfile:reg_files|register_array[21][24] ;
-; regfile:reg_files|register_array[16][25] ; Merged with regfile:reg_files|register_array[20][25] ;
-; regfile:reg_files|register_array[17][25] ; Merged with regfile:reg_files|register_array[21][25] ;
-; regfile:reg_files|register_array[16][26] ; Merged with regfile:reg_files|register_array[20][26] ;
-; regfile:reg_files|register_array[17][26] ; Merged with regfile:reg_files|register_array[21][26] ;
-; regfile:reg_files|register_array[16][27] ; Merged with regfile:reg_files|register_array[20][27] ;
-; regfile:reg_files|register_array[17][27] ; Merged with regfile:reg_files|register_array[21][27] ;
-; regfile:reg_files|register_array[16][28] ; Merged with regfile:reg_files|register_array[20][28] ;
-; regfile:reg_files|register_array[17][28] ; Merged with regfile:reg_files|register_array[21][28] ;
-; regfile:reg_files|register_array[16][29] ; Merged with regfile:reg_files|register_array[20][29] ;
-; regfile:reg_files|register_array[17][29] ; Merged with regfile:reg_files|register_array[21][29] ;
-; regfile:reg_files|register_array[16][30] ; Merged with regfile:reg_files|register_array[20][30] ;
-; regfile:reg_files|register_array[17][30] ; Merged with regfile:reg_files|register_array[21][30] ;
-; regfile:reg_files|register_array[16][31] ; Merged with regfile:reg_files|register_array[20][31] ;
-; regfile:reg_files|register_array[17][31] ; Merged with regfile:reg_files|register_array[21][31] ;
-; Total Number of Removed Registers = 224  ;                                                      ;
-+------------------------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -478,12 +245,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 17349 ;
-; Number of registers using Synchronous Clear  ; 11    ;
+; Total registers                              ; 17560 ;
+; Number of registers using Synchronous Clear  ; 30    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 17338 ;
+; Number of registers using Clock Enable       ; 17530 ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -494,71 +261,82 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |singlecycle|pc:pr_cnt|pc_out[0]                                  ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |singlecycle|pc:pr_cnt|pc_out[7]                                  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[0][28]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[4][0]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[2][5]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[6][4]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[1][2]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[5][17]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[3][9]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[7][18]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[16][29]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[20][14]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[18][11]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[22][31]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[17][7]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[21][17]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[19][0]              ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |singlecycle|pc:pr_cnt|pc_out[16]                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[31][8]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[30][8]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[29][8]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[28][8]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[27][6]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[26][12]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[25][17]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[24][21]             ;
 ; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[23][6]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[8][22]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[12][10]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[10][23]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[14][2]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[9][16]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[13][2]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[11][6]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[15][16]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[24][25]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[28][0]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[26][25]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[30][24]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[25][22]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[29][0]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[27][29]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[31][30]             ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[1]   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex4[2]  ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex0[2]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[6]  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[22][13]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[21][12]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[20][28]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[19][25]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[18][15]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[17][17]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[16][28]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[15][22]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[14][7]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[13][19]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[12][2]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[11][26]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[10][28]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[9][17]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[8][0]               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[7][19]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[6][5]               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[5][20]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[4][30]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[3][29]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[2][15]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[1][3]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[7]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex4[1]  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex0[1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[5]  ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[6]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[14]  ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex5[5]  ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex1[0]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[9]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[8]  ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[16]  ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex7[5]  ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex2[4]  ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[31] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[16] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |singlecycle|control_unit:ctr_unit|Selector16                     ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |singlecycle|control_unit:ctr_unit|Selector12                     ;
-; 17:1               ; 32 bits   ; 352 LEs       ; 352 LEs              ; 0 LEs                  ; No         ; |singlecycle|regfile:reg_files|rs1_data[24]                       ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; No         ; |singlecycle|operand_b[23]                                        ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; No         ; |singlecycle|operand_b[15]                                        ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |singlecycle|regfile:reg_files|rs2_data[23]                       ;
-; 261:1              ; 2 bits    ; 348 LEs       ; 8 LEs                ; 340 LEs                ; No         ; |singlecycle|lsu:load_store_unit|data_rd_temp[7]                  ;
-; 264:1              ; 4 bits    ; 704 LEs       ; 32 LEs               ; 672 LEs                ; No         ; |singlecycle|Mux30                                                ;
-; 265:1              ; 3 bits    ; 528 LEs       ; 24 LEs               ; 504 LEs                ; No         ; |singlecycle|Mux27                                                ;
-; 267:1              ; 5 bits    ; 890 LEs       ; 40 LEs               ; 850 LEs                ; No         ; |singlecycle|Mux23                                                ;
-; 200:1              ; 4 bits    ; 532 LEs       ; 208 LEs              ; 324 LEs                ; No         ; |singlecycle|alu:alu_process|Selector19                           ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[15]  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex5[4]  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex1[6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[11] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[15] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[31]  ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex7[4]  ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex3[4]  ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[28] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[24] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |singlecycle|control_unit:ctr_unit|Selector17                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |singlecycle|control_unit:ctr_unit|Selector14                     ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; No         ; |singlecycle|operand_b[20]                                        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |singlecycle|operand_b[18]                                        ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |singlecycle|regfile:reg_files|rs1_data[30]                       ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |singlecycle|regfile:reg_files|rs2_data[31]                       ;
+; 260:1              ; 2 bits    ; 346 LEs       ; 8 LEs                ; 338 LEs                ; No         ; |singlecycle|lsu:load_store_unit|data_rd_temp[7]                  ;
+; 263:1              ; 4 bits    ; 700 LEs       ; 32 LEs               ; 668 LEs                ; No         ; |singlecycle|Mux31                                                ;
+; 264:1              ; 3 bits    ; 528 LEs       ; 24 LEs               ; 504 LEs                ; No         ; |singlecycle|Mux25                                                ;
+; 266:1              ; 2 bits    ; 354 LEs       ; 14 LEs               ; 340 LEs                ; No         ; |singlecycle|Mux0                                                 ;
+; 266:1              ; 14 bits   ; 2478 LEs      ; 112 LEs              ; 2366 LEs               ; No         ; |singlecycle|Mux2                                                 ;
+; 266:1              ; 7 bits    ; 1239 LEs      ; 56 LEs               ; 1183 LEs               ; No         ; |singlecycle|Mux20                                                ;
+; 201:1              ; 7 bits    ; 938 LEs       ; 364 LEs              ; 574 LEs                ; No         ; |singlecycle|alu:alu_process|Selector8                            ;
+; 200:1              ; 5 bits    ; 665 LEs       ; 260 LEs              ; 405 LEs                ; No         ; |singlecycle|alu:alu_process|Selector18                           ;
+; 202:1              ; 3 bits    ; 402 LEs       ; 159 LEs              ; 243 LEs                ; No         ; |singlecycle|alu:alu_process|Selector4                            ;
 ; 201:1              ; 4 bits    ; 536 LEs       ; 208 LEs              ; 328 LEs                ; No         ; |singlecycle|alu:alu_process|Selector27                           ;
+; 203:1              ; 2 bits    ; 270 LEs       ; 108 LEs              ; 162 LEs                ; No         ; |singlecycle|alu:alu_process|Selector2                            ;
 ; 202:1              ; 2 bits    ; 268 LEs       ; 106 LEs              ; 162 LEs                ; No         ; |singlecycle|alu:alu_process|Selector28                           ;
-; 467:1              ; 6 bits    ; 1866 LEs      ; 360 LEs              ; 1506 LEs               ; No         ; |singlecycle|Mux10                                                ;
-; 468:1              ; 3 bits    ; 936 LEs       ; 183 LEs              ; 753 LEs                ; No         ; |singlecycle|Mux5                                                 ;
-; 469:1              ; 2 bits    ; 624 LEs       ; 124 LEs              ; 500 LEs                ; No         ; |singlecycle|Mux2                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: inst_mem:imem          ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; IMEM_W         ; 00000000000000000000000000001101 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
@@ -590,13 +368,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------+
-; Port Connectivity Checks: "control_unit:ctr_unit"     ;
-+----------+--------+----------+------------------------+
-; Port     ; Type   ; Severity ; Details                ;
-+----------+--------+----------+------------------------+
-; insn_vld ; Output ; Info     ; Explicitly unconnected ;
-+----------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "inst_mem:imem"                                                                                                                                                                      ;
++-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; raddr ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (13 bits) it drives.  The 19 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -604,7 +382,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:04:44     ;
+; Top            ; 00:12:32     ;
 +----------------+--------------+
 
 
@@ -614,7 +392,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Nov 07 09:45:56 2024
+    Info: Processing started: Sat Nov 09 02:01:08 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off wrapper -c wrapper
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /lecture/computerarchitecture/singlecycle_notussingsram/src/sub_compare.sv
@@ -648,18 +426,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file /lectur
 Info (12021): Found 1 design units, including 1 entities, in source file /lecture/computerarchitecture/singlecycle_notussingsram/src/alu.sv
     Info (12023): Found entity 1: alu
 Info (12127): Elaborating entity "singlecycle" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at singlecycle.sv(49): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at singlecycle.sv(52): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at singlecycle.sv(138): truncated value with size 13 to match size of target (1)
-Warning (10034): Output port "insn_vld" at singlecycle.sv(9) has no driver
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:ctr_unit"
-Warning (10034): Output port "insn_vld" at control_unit.sv(21) has no driver
 Info (12128): Elaborating entity "pc" for hierarchy "pc:pr_cnt"
 Info (12128): Elaborating entity "inst_mem" for hierarchy "inst_mem:imem"
-Warning (10850): Verilog HDL warning at inst_mem.sv(12): number of words (14) in memory file does not match the number of elements in the address range [0:2047]
-Warning (10030): Net "imem.data_a" at inst_mem.sv(9) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "imem.waddr_a" at inst_mem.sv(9) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "imem.we_a" at inst_mem.sv(9) has no driver or initial value, using a default initial value '0'
+Warning (10850): Verilog HDL warning at inst_mem.sv(14): number of words (184) in memory file does not match the number of elements in the address range [0:2047]
+Warning (10030): Net "imem.data_a" at inst_mem.sv(11) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "imem.waddr_a" at inst_mem.sv(11) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "imem.we_a" at inst_mem.sv(11) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:reg_files"
 Info (12128): Elaborating entity "immgen" for hierarchy "immgen:immidiate"
 Info (12128): Elaborating entity "brc" for hierarchy "brc:branchcomp"
@@ -675,19 +448,19 @@ Info (12128): Elaborating entity "input_peri" for hierarchy "lsu:load_store_unit
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "lsu:load_store_unit|data_memory:dmem|dmem" is uninferred due to asynchronous read logic
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/quartus/db/wrapper.ram0_inst_mem_ca4b5cb.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "insn_vld" is stuck at GND
-Info (17049): 128 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "insn_vld" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 32167 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 33536 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 38 input pins
-    Info (21059): Implemented 154 output pins
-    Info (21061): Implemented 31975 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4685 megabytes
-    Info: Processing ended: Thu Nov 07 09:50:49 2024
-    Info: Elapsed time: 00:04:53
-    Info: Total CPU time (on all processors): 00:03:57
+    Info (21059): Implemented 217 output pins
+    Info (21061): Implemented 33281 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4683 megabytes
+    Info: Processing ended: Sat Nov 09 02:13:49 2024
+    Info: Elapsed time: 00:12:41
+    Info: Total CPU time (on all processors): 00:08:17
 
 

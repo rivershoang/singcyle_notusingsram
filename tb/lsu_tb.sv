@@ -1,6 +1,5 @@
 `timescale 1ns/1ps
 
-
 module lsu_tb ();
    logic clk, rst, wr_en;
    logic [15:0] addr;

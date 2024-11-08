@@ -1,5 +1,5 @@
 `include "timescale.svh" 
-
+`timescale 1ns/1ps
 module alu_tb ();
   logic clk;
   logic [31:0] operand_a, operand_b;
@@ -44,7 +44,7 @@ module alu_tb ();
      end
   endtask 
 
-  task check_SUB ();
+  task check_SUB (); 
      logic [31:0] a, b, c_equal;
      logic [ 3:0] sel;
      begin 

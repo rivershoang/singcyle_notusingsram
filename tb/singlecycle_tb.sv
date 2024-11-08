@@ -32,7 +32,7 @@ module singlecycle_tb ();
    initial begin 
       #1 rst = 1;
       #1 rst = 0;
-      #100;
+      #1000;
       $finish; 
    end
 
