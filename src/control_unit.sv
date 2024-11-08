@@ -93,7 +93,10 @@ import opcode_type::*;
       default       : other_signal = 19'd0;
       endcase
     end
-    default: other_signal = 19'd0;
+    default: begin 
+      other_signal = 19'd0;
+      insn_vld = 0;
+    end
     endcase
   end
 
