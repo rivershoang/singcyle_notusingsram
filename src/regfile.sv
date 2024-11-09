@@ -2,7 +2,7 @@
 
 module regfile (
   input  logic        clk     , 
-  input  logic        rst     ,
+  input  logic        rst_n   ,
   input  logic [ 4:0] rs1_addr,
   input  logic [ 4:0] rs2_addr,
   input  logic [ 4:0] rd_addr , 
@@ -17,7 +17,7 @@ module regfile (
   integer i; 
 
   always_ff @(posedge clk) begin 
-    if (rst) begin 
+    if (!rst_n) begin 
       for (i = 1; i < 32; i = i + 1) begin
         register_array[i] <= 32'h0;
       end

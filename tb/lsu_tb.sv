@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 
 module lsu_tb ();
-   logic clk, rst, wr_en;
+   logic clk, rst_n, wr_en;
    logic [15:0] addr;
    logic [31:0] w_data, r_data, io_ledr, io_ledg, io_lcd, io_sw, io_btn;
    logic [ 3:0] bmask;
@@ -15,7 +15,7 @@ module lsu_tb ();
 
    lsu lsu_dut (
       .clk       (clk)           ,
-      .rst       (rst)           ,
+      .rst_n     (rst_n)         ,
       .addr      (addr)          ,
       .w_data    (w_data)        ,
       .wr_en     (wr_en)         ,
@@ -72,9 +72,9 @@ module lsu_tb ();
 
 
    initial begin
-      rst = 1;
+      rst_n = 0;
       #1 
-      rst = 0; 
+      rst_n = 1; 
       ld_sel = 3'b010;
 
     // hex0, hex1, hex2, hex3

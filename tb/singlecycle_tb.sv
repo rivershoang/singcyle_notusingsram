@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
 
 module singlecycle_tb ();
-   logic clk, rst, pc_debug, insn_vld;
+   logic clk, rst_n, insn_vld;
    logic [ 6:0] io_hex0, io_hex1, io_hex2, io_hex3, io_hex4, io_hex5, io_hex6, io_hex7;
-   logic [31:0] io_ledr, io_ledg, io_lcd, io_sw, io_btn;
+   logic [31:0] io_ledr, io_ledg, io_lcd, io_sw, io_btn, instr_test, pc_debug;
 
    initial begin 
       clk = 0;
@@ -12,7 +12,7 @@ module singlecycle_tb ();
 
    singlecycle dut (
       .clk      (clk)     ,
-      .rst      (rst)     ,
+      .rst_n    (rst_n)   ,
       .pc_debug (pc_debug),
       .io_ledg  (io_ledg) ,
       .io_lcd   (io_lcd)  ,
@@ -26,14 +26,19 @@ module singlecycle_tb ();
       .io_hex5  (io_hex5) , 
       .io_hex6  (io_hex6) ,
       .io_hex7  (io_hex7) ,
-      .insn_vld (insn_vld)
+      .io_sw    (io_sw)   ,
+      .insn_vld (insn_vld),
+      .instr_test (instr_test)
    );
 
    initial begin 
-      #1 rst = 1;
-      #1 rst = 0;
+      #1 rst_n = 0;
+      #1 rst_n = 1;
+      #1 io_sw = 32'd123456;
+      # 1000; 
+      #1 io_sw = 32'd000000;
       #1000;
-      $finish; 
+      $stop; 
    end
 
 endmodule : singlecycle_tb

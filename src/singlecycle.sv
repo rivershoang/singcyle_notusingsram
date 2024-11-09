@@ -5,7 +5,7 @@
 module singlecycle 
 (
    input  logic        clk     , 
-   input  logic        rst     ,
+   input  logic        rst_n   ,
    output logic [31:0] pc_debug,
    output logic        insn_vld,
    output logic [31:0] io_ledr ,
@@ -60,7 +60,7 @@ module singlecycle
 
    pc pr_cnt (
       .clk    (clk)   ,
-      .rst    (rst)   ,
+      .rst_n  (rst_n) ,
       .pc_in  (nxt_pc),
       .pc_out (pc)
    );
@@ -72,7 +72,7 @@ module singlecycle
 
    regfile reg_files (
       .clk      (clk)         ,   
-      .rst      (rst)         ,
+      .rst_n    (rst_n)       ,
       .rs1_addr (instr[19:15]),
       .rs2_addr (instr[24:20]),
       .rd_addr  (instr[11:7]) ,
@@ -110,7 +110,7 @@ module singlecycle
 
    lsu load_store_unit (
       .clk       (clk)           ,
-      .rst       (rst)           ,
+      .rst_n     (rst_n)         ,
       .addr      (alu_data[15:0]),
       .w_data    (rs2_data)      ,
       .wr_en     (wr_en)         ,

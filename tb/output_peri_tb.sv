@@ -2,7 +2,7 @@
 module output_peri_tb;
   // Tín hiệu testbench
   logic clk;
-  logic rst;
+  logic rst_n;
   logic [7:0] addr;
   logic [31:0] w_data;
   logic wr_en;
@@ -20,25 +20,24 @@ module output_peri_tb;
 
   // Khởi tạo module output_peri
   output_peri peri_dut (
-    .clk(clk),
-    .rst(rst),
-    .addr(addr),
-    .w_data(w_data),
-    .wr_en(wr_en),
-    .bmask(bmask),
-    .rd_data(rd_data),
-    .io_hex0(io_hex0),
-    .io_hex1(io_hex1),
-    .io_hex2(io_hex2),
-    .io_hex3(io_hex3),
-    .io_hex4(io_hex4),
-    .io_hex5(io_hex5),
-    .io_hex6(io_hex6),
-    .io_hex7(io_hex7),
-    .io_ledr(io_ledr),
-    .io_ledg(io_ledg),
-    .io_lcd(io_lcd),
-    .io_keypad(io_keypad)
+    .clk     (clk),
+    .rst_n   (rst_n),
+    .addr    (addr),
+    .w_data  (w_data),
+    .wr_en   (wr_en),
+    .bmask   (bmask),
+    .rd_data (rd_data),
+    .io_hex0 (io_hex0),
+    .io_hex1 (io_hex1),
+    .io_hex2 (io_hex2),
+    .io_hex3 (io_hex3),
+    .io_hex4 (io_hex4),
+    .io_hex5 (io_hex5),
+    .io_hex6 (io_hex6),
+    .io_hex7 (io_hex7),
+    .io_ledr (io_ledr),
+    .io_ledg (io_ledg),
+    .io_lcd  (io_lcd)
   );
 
   // Tạo xung clock
@@ -50,12 +49,12 @@ module output_peri_tb;
   // Quá trình kiểm tra
   initial begin
     // Khởi động tín hiệu
-    rst = 1;
+    rst_n = 0;
     wr_en = 0;
     addr = 0;
     w_data = 0;
     bmask = 4'b0011;
-    #1 rst = 0; 
+    #1 rst_n = 1; 
 
     // Ghi dữ liệu vào io_ledr
     addr = 8'h00;

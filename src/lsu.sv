@@ -3,7 +3,7 @@
 /* verilator lint_off UNUSEDSIGNAL */
 module lsu (
   input  logic        clk     ,
-  input  logic        rst     ,
+  input  logic        rst_n   ,
   input  logic [15:0] addr    ,
   input  logic [31:0] w_data  ,
   input  logic        wr_en   ,
@@ -42,7 +42,7 @@ module lsu (
 
   output_peri peri_out (
     .clk       (clk)          ,
-    .rst       (rst)          ,
+    .rst_n     (rst_n)        ,
     .addr      (addr[7:0])    ,
     .w_data    (w_data)       ,
     .wr_en     (wr_en_outperi),

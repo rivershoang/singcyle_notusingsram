@@ -6,7 +6,7 @@ module regfile_tb();
   /* verilator lint_off UNUSEDSIGNAL */
   
   localparam number_occur = 100;
-  logic clk, rst, rd_wren;
+  logic clk, rst_n, rd_wren;
   logic [ 4:0] rs1_addr, rs2_addr, rd_addr;
   logic [31:0] rd_data, rs1_data, rs2_data;
 
@@ -24,7 +24,7 @@ module regfile_tb();
   
   regfile regfile_dut (
     .clk      (clk)     ,
-    .rst      (rst)     ,
+    .rst_n    (rst_n)   ,
     .rs1_addr (rs1_addr),
     .rs2_addr (rs2_addr),
     .rd_addr  (rd_addr) ,
@@ -64,9 +64,9 @@ module regfile_tb();
   
   // test case 
   initial begin 
-    rst = 1;
+    rst_n = 0;
     @(posedge clk);
-    rst = 0;
+    rst_n = 1;
     @(posedge clk);
     
     repeat (number_occur) begin

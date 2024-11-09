@@ -3,7 +3,7 @@
 /* verilator lint_off WIDTHTRUNC */
 module output_peri (
   input  logic        clk    ,
-  input  logic        rst    ,
+  input  logic        rst_n  ,
   input  logic [ 7:0] addr   ,
   input  logic [31:0] w_data ,
   input  logic        wr_en  ,
@@ -24,7 +24,7 @@ module output_peri (
 );
   
   always_ff @(posedge clk) begin 
-    if (rst) begin 
+    if (!rst_n) begin 
       io_ledr <= 0;
       io_ledg <= 0;
       io_hex0 <= 0;
