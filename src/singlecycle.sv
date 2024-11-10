@@ -1,7 +1,6 @@
 `include "alu_opcode.svh"
 `include "opcode_type.svh"
 
-`timescale 1ns/1ps
 module singlecycle 
 (
    input  logic        clk     , 
@@ -27,10 +26,28 @@ module singlecycle
 ); 
 
    logic [ 1:0] wb_sel;
-   logic [31:0] pc, pc_four, nxt_pc;
-   logic [31:0] instr, wb_data, rs1_data, rs2_data, imm, alu_data, r_data, operand_a, operand_b;
-   logic        reg_wr_en, br_un, br_less, br_equal, a_sel, b_sel, wr_en, pc_sel;
-   logic [ 3:0] alu_sel, bmask;
+   logic [31:0] pc     , 
+                pc_four, 
+                nxt_pc ;
+   logic [31:0] instr    , 
+                wb_data  , 
+                rs1_data , 
+                rs2_data , 
+                imm      , 
+                alu_data , 
+                r_data   , 
+                operand_a, 
+                operand_b;
+   logic        reg_wr_en, 
+                br_un    , 
+                br_less  , 
+                br_equal , 
+                a_sel    , 
+                b_sel    , 
+                wr_en    , 
+                pc_sel   ;
+   logic [ 3:0] alu_sel, 
+                bmask  ;
    logic [ 2:0] ld_sel;
 
    // for testbench

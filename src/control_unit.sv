@@ -1,6 +1,6 @@
 `include "timescale.svh"
 `include "opcode_type.svh"
-`timescale 1ns/1ps
+
 
 module control_unit 
 import opcode_type::*;

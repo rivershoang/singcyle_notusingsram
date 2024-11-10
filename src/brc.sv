@@ -1,5 +1,5 @@
 `include "timescale.svh"
-
+  /* verilator lint_off UNUSEDSIGNAL */
 module brc (
   input  logic [31:0] rs1_data,
   input  logic [31:0] rs2_data,
@@ -7,9 +7,9 @@ module brc (
   output logic        br_less , // 1 if rs1 < rs2, otherwise
   output logic        br_equal  // 1 if rs1 = rs2, otherwise
 );
-  /* verilator lint_off UNUSEDSIGNAL */
+
   logic [32:0] data_s, data_us;
-  /* verilator lint_on UNUSEDSIGNAL */
+
 
 
   sub_compare br_comp (

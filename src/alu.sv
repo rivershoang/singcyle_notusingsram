@@ -1,6 +1,6 @@
 `include "timescale.svh"
 `include "alu_opcode.svh"
-
+/* verilator lint_off UNUSEDSIGNAL */
 module alu
 import alu_opcode::*;
 (
@@ -9,13 +9,13 @@ import alu_opcode::*;
   input 			 [ 3:0] alu_op       ,
   output logic [31:0] alu_data
 );
-/* verilator lint_off UNUSEDSIGNAL */
+
   logic [32:0] data_s,
                data_us;
   logic [31:0] sll_data, 
                srl_data,
                sra_data;
-/* verilator lint_on UNUSEDSIGNAL */
+
   
   alu_op_e alu_op_t;
   

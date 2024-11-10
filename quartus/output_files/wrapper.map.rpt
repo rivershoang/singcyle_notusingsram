@@ -1,5 +1,5 @@
 Analysis & Synthesis report for wrapper
-Sat Nov 09 02:13:48 2024
+Sun Nov 10 17:27:49 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,13 +15,14 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: inst_mem:imem
- 11. Parameter Settings for User Entity Instance: lsu:load_store_unit|data_memory:dmem
- 12. Port Connectivity Checks: "alu:alu_process|sub_compare:compare"
- 13. Port Connectivity Checks: "brc:branchcomp|sub_compare:br_comp"
- 14. Port Connectivity Checks: "inst_mem:imem"
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: singlecycle:single_cycle|inst_mem:imem
+ 11. Parameter Settings for User Entity Instance: singlecycle:single_cycle|lsu:load_store_unit|data_memory:dmem
+ 12. Port Connectivity Checks: "singlecycle:single_cycle|alu:alu_process|sub_compare:compare"
+ 13. Port Connectivity Checks: "singlecycle:single_cycle|brc:branchcomp|sub_compare:br_comp"
+ 14. Port Connectivity Checks: "singlecycle:single_cycle|inst_mem:imem"
+ 15. Port Connectivity Checks: "singlecycle:single_cycle"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +48,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Nov 09 02:13:48 2024           ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 10 17:27:49 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; wrapper                                         ;
-; Top-level Entity Name              ; singlecycle                                     ;
+; Top-level Entity Name              ; wrapper                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 33,185                                          ;
-;     Total combinational functions  ; 15,753                                          ;
+; Total logic elements               ; 33,315                                          ;
+;     Total combinational functions  ; 15,883                                          ;
 ;     Dedicated logic registers      ; 17,560                                          ;
 ; Total registers                    ; 17560                                           ;
-; Total pins                         ; 255                                             ;
+; Total pins                         ; 117                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -70,7 +71,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; singlecycle        ; wrapper            ;
+; Top-level entity name                                                      ; wrapper            ; wrapper            ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -160,83 +161,85 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                               ;
-+---------------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                                            ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                ; Library ;
-+---------------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
-; ../src/sub_compare.sv                                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/sub_compare.sv                ;         ;
-; ../src/singlecycle.sv                                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/singlecycle.sv                ;         ;
-; ../src/shift_reg.sv                                                                         ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/shift_reg.sv                  ;         ;
-; ../src/regfile.sv                                                                           ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/regfile.sv                    ;         ;
-; ../src/pc.sv                                                                                ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/pc.sv                         ;         ;
-; ../src/output_peri.sv                                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/output_peri.sv                ;         ;
-; ../src/lsu.sv                                                                               ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/lsu.sv                        ;         ;
-; ../src/inst_mem.sv                                                                          ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/inst_mem.sv                   ;         ;
-; ../src/input_peri.sv                                                                        ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/input_peri.sv                 ;         ;
-; ../src/immgen.sv                                                                            ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/immgen.sv                     ;         ;
-; ../src/data_memory.sv                                                                       ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/data_memory.sv                ;         ;
-; ../src/control_unit.sv                                                                      ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/control_unit.sv               ;         ;
-; ../src/brc.sv                                                                               ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/brc.sv                        ;         ;
-; ../src/alu.sv                                                                               ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/alu.sv                        ;         ;
-; ../src/alu_opcode.svh                                                                       ; yes             ; Auto-Found Unspecified File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/alu_opcode.svh                ;         ;
-; ../src/opcode_type.svh                                                                      ; yes             ; Auto-Found Unspecified File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/opcode_type.svh               ;         ;
-; /lecture/computerarchitecture/singlecycle_notussingsram/src/timescale.svh                   ; yes             ; Auto-Found Unspecified File  ; /lecture/computerarchitecture/singlecycle_notussingsram/src/timescale.svh                   ;         ;
-; /lecture/computerarchitecture/singlecycle_notussingsram/test/dump/sw_to_seg/hex2dec_nam.txt ; yes             ; Auto-Found File              ; /lecture/computerarchitecture/singlecycle_notussingsram/test/dump/sw_to_seg/hex2dec_nam.txt ;         ;
-+---------------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                   ;
++---------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                                      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++---------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; ../src/sub_compare.sv                                                                 ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/sub_compare.sv          ;         ;
+; ../src/singlecycle.sv                                                                 ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/singlecycle.sv          ;         ;
+; ../src/shift_reg.sv                                                                   ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/shift_reg.sv            ;         ;
+; ../src/regfile.sv                                                                     ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/regfile.sv              ;         ;
+; ../src/pc.sv                                                                          ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/pc.sv                   ;         ;
+; ../src/output_peri.sv                                                                 ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/output_peri.sv          ;         ;
+; ../src/lsu.sv                                                                         ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/lsu.sv                  ;         ;
+; ../src/inst_mem.sv                                                                    ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/inst_mem.sv             ;         ;
+; ../src/input_peri.sv                                                                  ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/input_peri.sv           ;         ;
+; ../src/immgen.sv                                                                      ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/immgen.sv               ;         ;
+; ../src/data_memory.sv                                                                 ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/data_memory.sv          ;         ;
+; ../src/control_unit.sv                                                                ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/control_unit.sv         ;         ;
+; ../src/brc.sv                                                                         ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/brc.sv                  ;         ;
+; ../src/alu.sv                                                                         ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/alu.sv                  ;         ;
+; ../src/alu_opcode.svh                                                                 ; yes             ; User Unspecified File        ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/alu_opcode.svh          ;         ;
+; ../src/opcode_type.svh                                                                ; yes             ; User Unspecified File        ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/opcode_type.svh         ;         ;
+; ../src/timescale.svh                                                                  ; yes             ; User Unspecified File        ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/src/timescale.svh           ;         ;
+; wrapper.sv                                                                            ; yes             ; User SystemVerilog HDL File  ; E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/quartus/wrapper.sv          ;         ;
+; /lecture/computerarchitecture/singlecycle_notussingsram/test/dump/stopwatch/s_nam.txt ; yes             ; Auto-Found File              ; /lecture/computerarchitecture/singlecycle_notussingsram/test/dump/stopwatch/s_nam.txt ;         ;
++---------------------------------------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 33,185 ;
-;                                             ;        ;
-; Total combinational functions               ; 15753  ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 14221  ;
-;     -- 3 input functions                    ; 1274   ;
-;     -- <=2 input functions                  ; 258    ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 15472  ;
-;     -- arithmetic mode                      ; 281    ;
-;                                             ;        ;
-; Total registers                             ; 17560  ;
-;     -- Dedicated logic registers            ; 17560  ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 255    ;
-; Embedded Multiplier 9-bit elements          ; 0      ;
-; Maximum fan-out node                        ; clk    ;
-; Maximum fan-out                             ; 17560  ;
-; Total fan-out                               ; 114110 ;
-; Average fan-out                             ; 3.40   ;
-+---------------------------------------------+--------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 33,315   ;
+;                                             ;          ;
+; Total combinational functions               ; 15883    ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 14635    ;
+;     -- 3 input functions                    ; 1001     ;
+;     -- <=2 input functions                  ; 247      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 15602    ;
+;     -- arithmetic mode                      ; 281      ;
+;                                             ;          ;
+; Total registers                             ; 17560    ;
+;     -- Dedicated logic registers            ; 17560    ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 117      ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_27 ;
+; Maximum fan-out                             ; 17560    ;
+; Total fan-out                               ; 114802   ;
+; Average fan-out                             ; 3.42     ;
++---------------------------------------------+----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                              ;
-+------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers  ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
-+------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; |singlecycle                 ; 15753 (361)       ; 17560 (0)     ; 0           ; 0            ; 0       ; 0         ; 255  ; 0            ; |singlecycle                                          ; work         ;
-;    |alu:alu_process|         ; 655 (358)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|alu:alu_process                          ; work         ;
-;       |shift_reg:shift|      ; 199 (199)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|alu:alu_process|shift_reg:shift          ; work         ;
-;       |sub_compare:compare|  ; 98 (98)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|alu:alu_process|sub_compare:compare      ; work         ;
-;    |brc:branchcomp|          ; 152 (21)          ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|brc:branchcomp                           ; work         ;
-;       |sub_compare:br_comp|  ; 131 (131)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|brc:branchcomp|sub_compare:br_comp       ; work         ;
-;    |control_unit:ctr_unit|   ; 39 (39)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|control_unit:ctr_unit                    ; work         ;
-;    |immgen:immidiate|        ; 6 (6)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|immgen:immidiate                         ; work         ;
-;    |inst_mem:imem|           ; 457 (457)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|inst_mem:imem                            ; work         ;
-;    |lsu:load_store_unit|     ; 12557 (18)        ; 16536 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit                      ; work         ;
-;       |data_memory:dmem|     ; 12481 (12481)     ; 16384 (16384) ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit|data_memory:dmem     ; work         ;
-;       |input_peri:per_in|    ; 4 (4)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit|input_peri:per_in    ; work         ;
-;       |output_peri:peri_out| ; 54 (54)           ; 152 (152)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|lsu:load_store_unit|output_peri:peri_out ; work         ;
-;    |pc:pr_cnt|               ; 33 (33)           ; 32 (32)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|pc:pr_cnt                                ; work         ;
-;    |regfile:reg_files|       ; 1493 (1493)       ; 992 (992)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |singlecycle|regfile:reg_files                        ; work         ;
-+------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++---------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers  ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Library Name ;
++---------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
+; |wrapper                        ; 15883 (0)         ; 17560 (0)     ; 0           ; 0            ; 0       ; 0         ; 117  ; 0            ; |wrapper                                                                   ; work         ;
+;    |singlecycle:single_cycle|   ; 15883 (322)       ; 17560 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle                                          ; work         ;
+;       |alu:alu_process|         ; 645 (351)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|alu:alu_process                          ; work         ;
+;          |shift_reg:shift|      ; 196 (196)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|alu:alu_process|shift_reg:shift          ; work         ;
+;          |sub_compare:compare|  ; 98 (98)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|alu:alu_process|sub_compare:compare      ; work         ;
+;       |brc:branchcomp|          ; 151 (21)          ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|brc:branchcomp                           ; work         ;
+;          |sub_compare:br_comp|  ; 130 (130)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|brc:branchcomp|sub_compare:br_comp       ; work         ;
+;       |control_unit:ctr_unit|   ; 38 (38)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|control_unit:ctr_unit                    ; work         ;
+;       |immgen:immidiate|        ; 7 (7)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|immgen:immidiate                         ; work         ;
+;       |inst_mem:imem|           ; 631 (631)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|inst_mem:imem                            ; work         ;
+;       |lsu:load_store_unit|     ; 12545 (19)        ; 16536 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit                      ; work         ;
+;          |data_memory:dmem|     ; 12466 (12466)     ; 16384 (16384) ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|data_memory:dmem     ; work         ;
+;          |input_peri:per_in|    ; 5 (5)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|input_peri:per_in    ; work         ;
+;          |output_peri:peri_out| ; 55 (55)           ; 152 (152)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out ; work         ;
+;       |pc:pr_cnt|               ; 33 (33)           ; 32 (32)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|pc:pr_cnt                                ; work         ;
+;       |regfile:reg_files|       ; 1511 (1511)       ; 992 (992)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|singlecycle:single_cycle|regfile:reg_files                        ; work         ;
++---------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -255,102 +258,102 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |singlecycle|pc:pr_cnt|pc_out[0]                                  ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |singlecycle|pc:pr_cnt|pc_out[16]                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[31][8]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[30][8]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[29][8]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[28][8]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[27][6]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[26][12]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[25][17]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[24][21]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[23][6]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[22][13]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[21][12]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[20][28]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[19][25]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[18][15]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[17][17]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[16][28]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[15][22]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[14][7]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[13][19]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[12][2]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[11][26]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[10][28]             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[9][17]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[8][0]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[7][19]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[6][5]               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[5][20]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[4][30]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[3][29]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[2][15]              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|regfile:reg_files|register_array[1][3]               ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[7]   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex4[1]  ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex0[1]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[5]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[6]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[15]  ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex5[4]  ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex1[6]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[11] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[15] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[31]  ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex7[4]  ;
-; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_hex3[4]  ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[28] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |singlecycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[24] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |singlecycle|control_unit:ctr_unit|Selector17                     ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |singlecycle|control_unit:ctr_unit|Selector14                     ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; No         ; |singlecycle|operand_b[20]                                        ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |singlecycle|operand_b[18]                                        ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |singlecycle|regfile:reg_files|rs1_data[30]                       ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |singlecycle|regfile:reg_files|rs2_data[31]                       ;
-; 260:1              ; 2 bits    ; 346 LEs       ; 8 LEs                ; 338 LEs                ; No         ; |singlecycle|lsu:load_store_unit|data_rd_temp[7]                  ;
-; 263:1              ; 4 bits    ; 700 LEs       ; 32 LEs               ; 668 LEs                ; No         ; |singlecycle|Mux31                                                ;
-; 264:1              ; 3 bits    ; 528 LEs       ; 24 LEs               ; 504 LEs                ; No         ; |singlecycle|Mux25                                                ;
-; 266:1              ; 2 bits    ; 354 LEs       ; 14 LEs               ; 340 LEs                ; No         ; |singlecycle|Mux0                                                 ;
-; 266:1              ; 14 bits   ; 2478 LEs      ; 112 LEs              ; 2366 LEs               ; No         ; |singlecycle|Mux2                                                 ;
-; 266:1              ; 7 bits    ; 1239 LEs      ; 56 LEs               ; 1183 LEs               ; No         ; |singlecycle|Mux20                                                ;
-; 201:1              ; 7 bits    ; 938 LEs       ; 364 LEs              ; 574 LEs                ; No         ; |singlecycle|alu:alu_process|Selector8                            ;
-; 200:1              ; 5 bits    ; 665 LEs       ; 260 LEs              ; 405 LEs                ; No         ; |singlecycle|alu:alu_process|Selector18                           ;
-; 202:1              ; 3 bits    ; 402 LEs       ; 159 LEs              ; 243 LEs                ; No         ; |singlecycle|alu:alu_process|Selector4                            ;
-; 201:1              ; 4 bits    ; 536 LEs       ; 208 LEs              ; 328 LEs                ; No         ; |singlecycle|alu:alu_process|Selector27                           ;
-; 203:1              ; 2 bits    ; 270 LEs       ; 108 LEs              ; 162 LEs                ; No         ; |singlecycle|alu:alu_process|Selector2                            ;
-; 202:1              ; 2 bits    ; 268 LEs       ; 106 LEs              ; 162 LEs                ; No         ; |singlecycle|alu:alu_process|Selector28                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |wrapper|singlecycle:single_cycle|pc:pr_cnt|pc_out[0]                                  ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |wrapper|singlecycle:single_cycle|pc:pr_cnt|pc_out[21]                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[31][27]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[30][11]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[29][25]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[28][20]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[27][17]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[26][18]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[25][1]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[24][5]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[23][29]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[22][10]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[21][7]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[20][28]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[19][28]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[18][11]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[17][10]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[16][5]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[15][20]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[14][8]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[13][14]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[12][1]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[11][3]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[10][6]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[9][12]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[8][24]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[7][16]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[6][24]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[5][27]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[4][26]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[3][15]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[2][17]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|regfile:reg_files|register_array[1][11]              ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[5]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_hex4[1]  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_hex0[5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[7]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[9]   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_hex5[0]  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_hex1[6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[9]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[15] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_lcd[28]  ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_hex6[6]  ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_hex2[5]  ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_ledg[27] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out|io_ledr[26] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |wrapper|singlecycle:single_cycle|control_unit:ctr_unit|Selector15                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |wrapper|singlecycle:single_cycle|control_unit:ctr_unit|Selector14                     ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; No         ; |wrapper|singlecycle:single_cycle|operand_b[21]                                        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |wrapper|singlecycle:single_cycle|operand_b[13]                                        ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |wrapper|singlecycle:single_cycle|regfile:reg_files|rs1_data[8]                        ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |wrapper|singlecycle:single_cycle|regfile:reg_files|rs2_data[2]                        ;
+; 260:1              ; 2 bits    ; 346 LEs       ; 8 LEs                ; 338 LEs                ; No         ; |wrapper|singlecycle:single_cycle|lsu:load_store_unit|data_rd_temp[7]                  ;
+; 263:1              ; 4 bits    ; 700 LEs       ; 32 LEs               ; 668 LEs                ; No         ; |wrapper|singlecycle:single_cycle|Mux29                                                ;
+; 264:1              ; 2 bits    ; 352 LEs       ; 12 LEs               ; 340 LEs                ; No         ; |wrapper|singlecycle:single_cycle|Mux8                                                 ;
+; 264:1              ; 13 bits   ; 2288 LEs      ; 104 LEs              ; 2184 LEs               ; No         ; |wrapper|singlecycle:single_cycle|Mux6                                                 ;
+; 264:1              ; 3 bits    ; 528 LEs       ; 24 LEs               ; 504 LEs                ; No         ; |wrapper|singlecycle:single_cycle|Mux27                                                ;
+; 266:1              ; 7 bits    ; 1239 LEs      ; 56 LEs               ; 1183 LEs               ; No         ; |wrapper|singlecycle:single_cycle|Mux17                                                ;
+; 201:1              ; 7 bits    ; 938 LEs       ; 364 LEs              ; 574 LEs                ; No         ; |wrapper|singlecycle:single_cycle|alu:alu_process|Selector10                           ;
+; 200:1              ; 5 bits    ; 665 LEs       ; 260 LEs              ; 405 LEs                ; No         ; |wrapper|singlecycle:single_cycle|alu:alu_process|Selector19                           ;
+; 202:1              ; 3 bits    ; 402 LEs       ; 159 LEs              ; 243 LEs                ; No         ; |wrapper|singlecycle:single_cycle|alu:alu_process|Selector6                            ;
+; 201:1              ; 4 bits    ; 536 LEs       ; 208 LEs              ; 328 LEs                ; No         ; |wrapper|singlecycle:single_cycle|alu:alu_process|Selector27                           ;
+; 203:1              ; 2 bits    ; 270 LEs       ; 108 LEs              ; 162 LEs                ; No         ; |wrapper|singlecycle:single_cycle|alu:alu_process|Selector2                            ;
+; 202:1              ; 2 bits    ; 268 LEs       ; 106 LEs              ; 162 LEs                ; No         ; |wrapper|singlecycle:single_cycle|alu:alu_process|Selector28                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: inst_mem:imem          ;
-+----------------+----------------------------------+-----------------+
-; Parameter Name ; Value                            ; Type            ;
-+----------------+----------------------------------+-----------------+
-; IMEM_W         ; 00000000000000000000000000001101 ; Unsigned Binary ;
-+----------------+----------------------------------+-----------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: singlecycle:single_cycle|inst_mem:imem ;
++----------------+----------------------------------+---------------------------------+
+; Parameter Name ; Value                            ; Type                            ;
++----------------+----------------------------------+---------------------------------+
+; IMEM_W         ; 00000000000000000000000000001101 ; Unsigned Binary                 ;
++----------------+----------------------------------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: lsu:load_store_unit|data_memory:dmem ;
-+----------------+----------------------------------+-------------------------------+
-; Parameter Name ; Value                            ; Type                          ;
-+----------------+----------------------------------+-------------------------------+
-; DMEM_W         ; 00000000000000000000000000001011 ; Unsigned Binary               ;
-+----------------+----------------------------------+-------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: singlecycle:single_cycle|lsu:load_store_unit|data_memory:dmem ;
++----------------+----------------------------------+--------------------------------------------------------+
+; Parameter Name ; Value                            ; Type                                                   ;
++----------------+----------------------------------+--------------------------------------------------------+
+; DMEM_W         ; 00000000000000000000000000001011 ; Unsigned Binary                                        ;
++----------------+----------------------------------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:alu_process|sub_compare:compare"                                                          ;
+; Port Connectivity Checks: "singlecycle:single_cycle|alu:alu_process|sub_compare:compare"                                 ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port           ; Type   ; Severity ; Details                                                                             ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -359,7 +362,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "brc:branchcomp|sub_compare:br_comp"                                                           ;
+; Port Connectivity Checks: "singlecycle:single_cycle|brc:branchcomp|sub_compare:br_comp"                                  ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port           ; Type   ; Severity ; Details                                                                             ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -369,7 +372,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "inst_mem:imem"                                                                                                                                                                      ;
+; Port Connectivity Checks: "singlecycle:single_cycle|inst_mem:imem"                                                                                                                                             ;
 +-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port  ; Type  ; Severity ; Details                                                                                                                                                                             ;
 +-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -377,12 +380,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "singlecycle:single_cycle"                                                                                           ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                  ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; io_sw[31..17]   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; io_ledr[31..17] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; io_ledg[31..8]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; io_lcd[31..11]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; pc_debug        ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; insn_vld        ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; instr_test      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:12:32     ;
+; Top            ; 00:13:05     ;
 +----------------+--------------+
 
 
@@ -392,7 +410,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Nov 09 02:01:08 2024
+    Info: Processing started: Sun Nov 10 17:14:35 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off wrapper -c wrapper
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /lecture/computerarchitecture/singlecycle_notussingsram/src/sub_compare.sv
@@ -425,42 +443,45 @@ Info (12021): Found 1 design units, including 1 entities, in source file /lectur
     Info (12023): Found entity 1: brc
 Info (12021): Found 1 design units, including 1 entities, in source file /lecture/computerarchitecture/singlecycle_notussingsram/src/alu.sv
     Info (12023): Found entity 1: alu
-Info (12127): Elaborating entity "singlecycle" for the top level hierarchy
-Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:ctr_unit"
-Info (12128): Elaborating entity "pc" for hierarchy "pc:pr_cnt"
-Info (12128): Elaborating entity "inst_mem" for hierarchy "inst_mem:imem"
-Warning (10850): Verilog HDL warning at inst_mem.sv(14): number of words (184) in memory file does not match the number of elements in the address range [0:2047]
+Info (12021): Found 1 design units, including 1 entities, in source file wrapper.sv
+    Info (12023): Found entity 1: wrapper
+Info (12127): Elaborating entity "wrapper" for the top level hierarchy
+Info (12128): Elaborating entity "singlecycle" for hierarchy "singlecycle:single_cycle"
+Info (12128): Elaborating entity "control_unit" for hierarchy "singlecycle:single_cycle|control_unit:ctr_unit"
+Info (12128): Elaborating entity "pc" for hierarchy "singlecycle:single_cycle|pc:pr_cnt"
+Info (12128): Elaborating entity "inst_mem" for hierarchy "singlecycle:single_cycle|inst_mem:imem"
+Warning (10850): Verilog HDL warning at inst_mem.sv(14): number of words (227) in memory file does not match the number of elements in the address range [0:2047]
 Warning (10030): Net "imem.data_a" at inst_mem.sv(11) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "imem.waddr_a" at inst_mem.sv(11) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "imem.we_a" at inst_mem.sv(11) has no driver or initial value, using a default initial value '0'
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:reg_files"
-Info (12128): Elaborating entity "immgen" for hierarchy "immgen:immidiate"
-Info (12128): Elaborating entity "brc" for hierarchy "brc:branchcomp"
+Info (12128): Elaborating entity "regfile" for hierarchy "singlecycle:single_cycle|regfile:reg_files"
+Info (12128): Elaborating entity "immgen" for hierarchy "singlecycle:single_cycle|immgen:immidiate"
+Info (12128): Elaborating entity "brc" for hierarchy "singlecycle:single_cycle|brc:branchcomp"
 Warning (10230): Verilog HDL assignment warning at brc.sv(23): truncated value with size 32 to match size of target (1)
-Info (12128): Elaborating entity "sub_compare" for hierarchy "brc:branchcomp|sub_compare:br_comp"
-Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_process"
-Info (12128): Elaborating entity "shift_reg" for hierarchy "alu:alu_process|shift_reg:shift"
-Info (12128): Elaborating entity "lsu" for hierarchy "lsu:load_store_unit"
-Info (12128): Elaborating entity "data_memory" for hierarchy "lsu:load_store_unit|data_memory:dmem"
-Info (12128): Elaborating entity "output_peri" for hierarchy "lsu:load_store_unit|output_peri:peri_out"
+Info (12128): Elaborating entity "sub_compare" for hierarchy "singlecycle:single_cycle|brc:branchcomp|sub_compare:br_comp"
+Info (12128): Elaborating entity "alu" for hierarchy "singlecycle:single_cycle|alu:alu_process"
+Info (12128): Elaborating entity "shift_reg" for hierarchy "singlecycle:single_cycle|alu:alu_process|shift_reg:shift"
+Info (12128): Elaborating entity "lsu" for hierarchy "singlecycle:single_cycle|lsu:load_store_unit"
+Info (12128): Elaborating entity "data_memory" for hierarchy "singlecycle:single_cycle|lsu:load_store_unit|data_memory:dmem"
+Info (12128): Elaborating entity "output_peri" for hierarchy "singlecycle:single_cycle|lsu:load_store_unit|output_peri:peri_out"
 Warning (10230): Verilog HDL assignment warning at output_peri.sv(96): truncated value with size 56 to match size of target (32)
-Info (12128): Elaborating entity "input_peri" for hierarchy "lsu:load_store_unit|input_peri:per_in"
+Info (12128): Elaborating entity "input_peri" for hierarchy "singlecycle:single_cycle|lsu:load_store_unit|input_peri:per_in"
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "lsu:load_store_unit|data_memory:dmem|dmem" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "singlecycle:single_cycle|lsu:load_store_unit|data_memory:dmem|dmem" is uninferred due to asynchronous read logic
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/quartus/db/wrapper.ram0_inst_mem_ca4b5cb.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "insn_vld" is stuck at VCC
+    Warning (13410): Pin "LCD_ON" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 33536 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 38 input pins
-    Info (21059): Implemented 217 output pins
-    Info (21061): Implemented 33281 logic cells
+Info (21057): Implemented 33528 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 94 output pins
+    Info (21061): Implemented 33411 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4683 megabytes
-    Info: Processing ended: Sat Nov 09 02:13:49 2024
-    Info: Elapsed time: 00:12:41
-    Info: Total CPU time (on all processors): 00:08:17
+    Info: Peak virtual memory: 4699 megabytes
+    Info: Processing ended: Sun Nov 10 17:27:49 2024
+    Info: Elapsed time: 00:13:14
+    Info: Total CPU time (on all processors): 00:13:08
 
 

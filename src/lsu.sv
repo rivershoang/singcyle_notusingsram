@@ -25,8 +25,12 @@ module lsu (
   input  logic [ 3:0] io_btn  
 );
   
-  logic [31:0] rdata_dmem, rd_peri_in, rd_peri, data_rd_temp; 
-  logic 	     wr_en_outperi, wr_en_dmem;
+  logic [31:0] rdata_dmem, 
+               rd_peri_in, 
+               rd_peri, 
+               data_rd_temp; 
+  logic 	     wr_en_outperi, 
+               wr_en_dmem;
   
   assign wr_en_dmem = wr_en && ~addr[14];
   assign wr_en_outperi = wr_en && addr[14] && (addr[11:8] == 4'b0000);
@@ -68,7 +72,9 @@ module lsu (
     .rdata  (rd_peri_in)
   );
 
-  assign data_rd_temp = (~addr[14]) ? rdata_dmem : (addr[11:8] == 4'b0000) ? rd_peri : (addr[11:8] == 4'b1000) ? rd_peri_in : 32'h0;
+  assign data_rd_temp = (~addr[14]) ? rdata_dmem : 
+                        (addr[11:8] == 4'b0000) ? rd_peri : 
+                        (addr[11:8] == 4'b1000) ? rd_peri_in : 32'h0;
   
   always_comb begin 
     case (ld_sel) 

@@ -45,6 +45,7 @@ Bin2SegLUT:
 
 MAIN:
    lw t0, 0(s6)
+   sw t0, 0(s1)
    jal ra, DIV100000    # t1 will be the quotient, t0 is remainder
    slli t1, t1, 2       # t1 = t1*4
    lw t1, 0x100(t1)     # call LUT to transform t1, t1 = LUT[0x100 + 4*t1]
