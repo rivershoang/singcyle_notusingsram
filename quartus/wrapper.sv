@@ -41,7 +41,7 @@ module wrapper (
     .clk      (CLOCK_27)         ,
     .rst_n    (SW[17])           ,
     .io_sw    ({15'b0, SW[16:0]}),
-    .io_btn   (~KEY)             ,
+    .io_btn   (KEY)              ,
     .io_hex0  (HEX0)             ,
     .io_hex1  (HEX1)             ,
     .io_hex2  (HEX2)             ,
