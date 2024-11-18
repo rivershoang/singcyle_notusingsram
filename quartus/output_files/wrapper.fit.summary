@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Nov 11 12:05:21 2024
+Fitter Status : Successful - Sat Nov 16 02:05:09 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : wrapper
 Top-level Entity Name : wrapper
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 26,133 / 33,216 ( 79 % )
-    Total combinational functions : 15,634 / 33,216 ( 47 % )
+Total logic elements : 26,723 / 33,216 ( 80 % )
+    Total combinational functions : 16,492 / 33,216 ( 50 % )
     Dedicated logic registers : 17,560 / 33,216 ( 53 % )
 Total registers : 17560
 Total pins : 117 / 475 ( 25 % )

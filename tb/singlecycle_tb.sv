@@ -1,15 +1,10 @@
 `timescale 1ns/1ns
 
 module singlecycle_tb ();
-   logic clk, rst_n, insn_vld;
-   logic [ 6:0] io_hex0, io_hex1, io_hex2, io_hex3, io_hex4, io_hex5, io_hex6, io_hex7;
-   logic [31:0] io_ledr, io_ledg, io_lcd, io_btn, instr_test, pc_debug;
-   logic [31:0] io_sw;
-
-   initial begin
-      clk = 0;
-      forever #1 clk = ~clk; // Thời gian mỗi nửa chu kỳ là 10 ns
-  end
+   reg            clk, rst_n, insn_vld;
+   reg   [31:0]   io_sw;
+   wire  [ 6:0]   io_hex0, io_hex1, io_hex2, io_hex3, io_hex4, io_hex5, io_hex6, io_hex7;
+   wire  [31:0]   io_ledr, io_ledg, io_lcd, io_btn, instr_test, pc_debug;
 
    singlecycle dut (
       .clk      (clk)     ,
@@ -32,20 +27,17 @@ module singlecycle_tb ();
       .instr_test (instr_test)
    );
 
+   always #1 clk = ~clk;
+
    initial begin 
+      clk  = 0;
       rst_n = 0;
       #5 
       rst_n = 1;
       #1
-      io_sw = 32'd64;
-      #1000;
-      io_sw = 32'd1000;
-      #1000; 
-      io_sw  = 32'd2047;
-      
-      // Chạy mô phỏng trong 1 phút (60 giây)
-      #10000; // 1 phút xung nhịp 50 MHz (thời gian trong nanosecond)
-      $stop; 
+      io_sw = 2;   
+      #100000000; 
+      $finish; 
    end
 
-endmodule : singlecycle_tb
+endmodule

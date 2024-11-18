@@ -1,0 +1,15 @@
+./../rtl/include/alu_opcode.svh
+./../rtl/include/opcode_type.svh
+./../rtl/alu.sv
+./../rtl/brc.sv
+./../rtl/control_unit.sv
+./../rtl/data_memory.sv
+./../rtl/immgen.sv
+./../rtl/input_peri.sv
+./../rtl/lsu.sv
+./../rtl/output_peri.sv
+./../rtl/pc.sv
+./../rtl/regfile.sv
+./../rtl/shift_reg.sv
+./../rtl/sub_compare.sv
+./../rtl/singlecycle.sv

@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 module wrapper_tb ();
-   logic CLOCK_50;
+   logic CLOCK_27;
    logic [17:0] SW;
    logic [16:0] SW_DISP;
    logic [ 3:0] KEY;
@@ -26,13 +26,13 @@ module wrapper_tb ();
    assign SW_DISP = SW[16:0];
    
    initial begin
-      CLOCK_50 = 0;
-      forever #1 CLOCK_50 = ~CLOCK_50; 
+      CLOCK_27 = 0;
+      forever #1 CLOCK_27 = ~CLOCK_27; 
    end
 
 
    wrapper wrapper_dut (
-      .CLOCK_50   (CLOCK_50),
+      .CLOCK_27   (CLOCK_27),
       .SW         (SW),
       .KEY        (KEY),
       .HEX0       (HEX0),
@@ -64,7 +64,7 @@ module wrapper_tb ();
       SW[16:0] = 2047;
       
       // Chạy mô phỏng trong 1 phút (60 giây)
-      #10000; // 1 phút xung nhịp 50 MHz (thời gian trong nanosecond)
+      #1000000; // 1 phút xung nhịp 50 MHz (thời gian trong nanosecond)
       $stop; 
    end
 
