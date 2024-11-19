@@ -1,4 +1,4 @@
-`include "../rtl/alu_opcode.svh"
+`include "../rtl/include/alu_opcode.svh"
 /* verilator lint_off UNUSEDSIGNAL */
 module alu
 import alu_opcode::*; (
