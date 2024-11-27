@@ -1,0 +1,449 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Lecture/ComputerArchitecture/pipeline_notusingsram/sim
+T_opt
+!s110 1732726798
+VAhbh=gN_4J^54o<EdLZ4N1
+04 14 4 work singlecycle_tb fast 0
+=1-d8bbc176143d-6747500d-362-1b68
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2020.4;71
+R0
+valu
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+DXx4 work 10 alu_opcode 0 22 95=@<7ka;HlOGQ63]UNQ22
+Z3 !s110 1732727239
+!i10b 1
+!s100 iRKX^GBNa37R>b>JO]4GW0
+Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ii12=DJ5P1Ue4OU[QXh<Ch3
+S1
+Z5 dE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/sim
+w1731991946
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/alu.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/alu.sv
+!i122 193
+L0 3 50
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z8 !s108 1732727239.000000
+Z9 !s107 ../rtl/include/alu_opcode.svh|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/alu.sv|
+Z10 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/alu.sv|
+!i113 0
+Z11 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Xalu_opcode
+R2
+R3
+!i10b 1
+!s100 z:HTRIiEKQ@2`>j?;@Xcj3
+R4
+I95=@<7ka;HlOGQ63]UNQ22
+S1
+R5
+Z12 w1731860547
+8../rtl/include/alu_opcode.svh
+F../rtl/include/alu_opcode.svh
+!i122 193
+Z13 L0 4 0
+V95=@<7ka;HlOGQ63]UNQ22
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R1
+vbrc
+R2
+R3
+!i10b 1
+!s100 M?SSVEhlfS2LfdNk=B2oH2
+R4
+I2V85[k=OzEIoZ34;j9IP]1
+S1
+R5
+w1731991955
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/brc.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/brc.sv
+!i122 194
+L0 1 21
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/brc.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/brc.sv|
+!i113 0
+R11
+R1
+vcontrol_unit
+R2
+Z14 DXx4 work 11 opcode_type 0 22 VWGm:Za;^]`d8MmQ024G[1
+R3
+!i10b 1
+!s100 Yb_ePA6g]eGk[cO3H=LG82
+R4
+I1_2n>K3_ge7^R90O1]W8;3
+S1
+R5
+w1731991963
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/control_unit.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/control_unit.sv
+!i122 195
+L0 3 97
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 ../rtl//include/opcode_type.svh|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/control_unit.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/control_unit.sv|
+!i113 0
+R11
+R1
+vdata_memory
+R2
+R3
+!i10b 1
+!s100 ZH2:jlHf9;W[X4b2IXI;l0
+R4
+IT@W6D2V;:EYb:fW;Y@z9N0
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/data_memory.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/data_memory.sv
+!i122 196
+L0 1 33
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/data_memory.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/data_memory.sv|
+!i113 0
+R11
+R1
+vimmgen
+R2
+R14
+R3
+!i10b 1
+!s100 T_MBI4ZI1P3MOMBbKzzlC0
+R4
+Io5bzTZCdS6UeD4z[;@z`k2
+S1
+R5
+w1731991979
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/immgen.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/immgen.sv
+!i122 197
+L0 3 38
+R6
+R7
+r1
+!s85 0
+31
+R8
+Z15 !s107 ../rtl//include/opcode_type.svh|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/immgen.sv|
+Z16 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/immgen.sv|
+!i113 0
+R11
+R1
+vinput_peri
+R2
+R3
+!i10b 1
+!s100 d[;:U7WMVUaAZ22^VFC`>1
+R4
+IongSC2oid^hPXTdYn_=Ve1
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/input_peri.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/input_peri.sv
+!i122 198
+L0 3 16
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/input_peri.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/input_peri.sv|
+!i113 0
+R11
+R1
+vinst_mem
+R2
+R3
+!i10b 1
+!s100 Z2XhN=>bVE@>6OGM_Xl[z3
+R4
+IL?8zGeBfE5^MdRji3dn730
+S1
+R5
+w1732725675
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/inst_mem.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/inst_mem.sv
+!i122 199
+L0 1 19
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/inst_mem.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/inst_mem.sv|
+!i113 0
+R11
+R1
+vlsu
+R2
+R3
+!i10b 1
+!s100 V30R70CofkA];>N>k<YS;1
+R4
+IBgjU;7bJnU<2fhGZODzTP3
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/lsu.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/lsu.sv
+!i122 200
+L0 4 87
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/lsu.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/lsu.sv|
+!i113 0
+R11
+R1
+Xopcode_type
+R2
+R3
+!i10b 1
+!s100 zYXd@YWIFn2F:KezVz@<X1
+R4
+IVWGm:Za;^]`d8MmQ024G[1
+S1
+R5
+R12
+8../rtl//include/opcode_type.svh
+F../rtl//include/opcode_type.svh
+!i122 197
+R13
+VVWGm:Za;^]`d8MmQ024G[1
+R7
+r1
+!s85 0
+31
+R8
+R15
+R16
+!i113 0
+R11
+R1
+voutput_peri
+R2
+R3
+!i10b 1
+!s100 W=kG8G8bhnzM?aB7d`Wh83
+R4
+Il75WVOXEOZ96>h>OQNO:A1
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/output_peri.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/output_peri.sv
+!i122 201
+L0 2 100
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/output_peri.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/output_peri.sv|
+!i113 0
+R11
+R1
+vpc
+R2
+Z17 !s110 1732727240
+!i10b 1
+!s100 o8:IM^1QKW_CoV?I0JAbf1
+R4
+IoD:KmYC1=NLR1BTgMMP[[1
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/pc.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/pc.sv
+!i122 202
+L0 1 17
+R6
+R7
+r1
+!s85 0
+31
+Z18 !s108 1732727240.000000
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/pc.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/pc.sv|
+!i113 0
+R11
+R1
+vregfile
+R2
+R17
+!i10b 1
+!s100 614n3TU9z43koef9U=fL10
+R4
+I2[=m@AThKGVjKT<KFge270
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/regfile.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/regfile.sv
+!i122 203
+L0 1 30
+R6
+R7
+r1
+!s85 0
+31
+R18
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/regfile.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/regfile.sv|
+!i113 0
+R11
+R1
+vshift_reg
+R2
+R17
+!i10b 1
+!s100 N6N:ZSkhh]5Qd<nobfUEo1
+R4
+I@bOS6gW7T<=SiT6GW1C8P2
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/shift_reg.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/shift_reg.sv
+!i122 204
+L0 1 179
+R6
+R7
+r1
+!s85 0
+31
+R18
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/shift_reg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/shift_reg.sv|
+!i113 0
+R11
+R1
+vsinglecycle
+R2
+R17
+!i10b 1
+!s100 GeM?MA[UlAeE=3g6fQSA82
+R4
+I>mf[ZJ2KH>7kA4kjfC`Uf1
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/singlecycle.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/singlecycle.sv
+!i122 205
+L0 1 166
+R6
+R7
+r1
+!s85 0
+31
+R18
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/singlecycle.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/singlecycle.sv|
+!i113 0
+R11
+R1
+vsinglecycle_tb
+R2
+R17
+!i10b 1
+!s100 6o:h7W2I[KMITDo2^1^kD3
+R4
+IDUIl<@a8:aA_@e6mf6F;R0
+S1
+R5
+w1732726790
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/tb/singlecycle_tb.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/tb/singlecycle_tb.sv
+!i122 207
+L0 3 41
+R6
+R7
+r1
+!s85 0
+31
+R18
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/tb/singlecycle_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/tb/singlecycle_tb.sv|
+!i113 0
+R11
+R1
+vsub_compare
+R2
+R17
+!i10b 1
+!s100 Ke^>o7o_J96S0k3D;B7V>1
+R4
+IlM5O7ENj>aV<B<YKV7MEC0
+S1
+R5
+R12
+8E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/sub_compare.sv
+FE:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/sub_compare.sv
+!i122 206
+L0 1 11
+R6
+R7
+r1
+!s85 0
+31
+R18
+!s107 E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/sub_compare.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/sub_compare.sv|
+!i113 0
+R11
+R1

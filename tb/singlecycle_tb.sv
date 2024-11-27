@@ -34,9 +34,9 @@ module singlecycle_tb ();
       rst_n = 0;
       #5 
       rst_n = 1;
-      #1
-      io_sw = 2;   
-      #100000000; 
+      io_sw = 32'd2;   
+    #100000000;
+     
       $finish; 
    end
 

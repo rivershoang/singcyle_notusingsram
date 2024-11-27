@@ -1,0 +1,112 @@
+E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/singlecycle.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/singlecycle.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module singlecycle
+
+Top level modules:
+	singlecycle
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/alu.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/alu.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling package alu_opcode
+-- Compiling module alu
+-- Importing package alu_opcode
+
+Top level modules:
+	alu
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/data_memory.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/data_memory.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module data_memory
+
+Top level modules:
+	data_memory
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/shift_reg.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/shift_reg.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module shift_reg
+
+Top level modules:
+	shift_reg
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/regfile.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/regfile.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module regfile
+
+Top level modules:
+	regfile
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/sub_compare.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/sub_compare.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module sub_compare
+
+Top level modules:
+	sub_compare
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/control_unit.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/control_unit.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling package opcode_type
+-- Compiling module control_unit
+-- Importing package opcode_type
+
+Top level modules:
+	control_unit
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/output_peri.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/output_peri.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module output_peri
+
+Top level modules:
+	output_peri
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/tb/singlecycle_tb.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/tb/singlecycle_tb.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module singlecycle_tb
+
+Top level modules:
+	singlecycle_tb
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/pc.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/pc.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/inst_mem.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/inst_mem.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module inst_mem
+
+Top level modules:
+	inst_mem
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/lsu.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/lsu.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module lsu
+
+Top level modules:
+	lsu
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/immgen.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/immgen.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling package opcode_type
+-- Compiling module immgen
+-- Importing package opcode_type
+
+Top level modules:
+	immgen
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/input_peri.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/input_peri.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module input_peri
+
+Top level modules:
+	input_peri
+
+} {} {}} E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/brc.sv {1 {vlog -work work -vopt -sv -stats=none E:/Lecture/ComputerArchitecture/singlecycle_notussingsram/rtl/brc.sv
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module brc
+
+Top level modules:
+	brc
+
+} {} {}}
